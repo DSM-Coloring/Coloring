@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+    html,
+    #root {
+        @apply w-full h-full;
+        font-family:
+            "Pretendard",
+            -apple-system,
+            BlinkMacSystemFont,
+            system-ui,
+            sans-serif;
+    }
+
+    body {
+        @apply w-full h-full min-w-90;
+        font-family:
+            "Pretendard",
+            -apple-system,
+            BlinkMacSystemFont,
+            system-ui,
+            sans-serif;
+    }
+}
+
+@theme {
+    --color-sdg10: #dd1367;
+
+    --font-sans: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+    --animate-fade-in: fadeIn 0.5s ease-out;
+    --animate-fade-out: fadeOut 0.5s ease-out;
+    --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+}
