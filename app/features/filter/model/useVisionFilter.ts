@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { type FilterType, FILTERS } from "../../../shared/model/filter"
 
+/**
+ * @description 필터 애니메이션 상태 관리
+ */
 export function useVisionFilter() {
     const [currentFilter, setCurrentFilter] = useState<FilterType>(FILTERS[Math.floor(Math.random() * FILTERS.length)])
     const [isTransitioning, setIsTransitioning] = useState(false)

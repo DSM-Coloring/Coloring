@@ -11,6 +11,9 @@ const COLORS = [
     { name: "Magenta", hex: "bg-sdg10" },
 ]
 
+/**
+ * @description 색약 설명
+ */
 export function ColorBlindnessSection() {
     return (
         <section className="py-24 px-6 bg-white text-zinc-900">

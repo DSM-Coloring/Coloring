@@ -46,6 +46,9 @@ const FILTER_OPTIONS: {
     },
 ]
 
+/**
+ * @description 필터 선택 및 색약 설명 섹션
+ */
 export function InteractiveSection() {
     return (
         <section id="experience" className="py-24 px-6 bg-zinc-900 text-white">

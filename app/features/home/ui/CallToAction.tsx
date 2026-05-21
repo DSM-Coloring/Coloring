@@ -1,3 +1,6 @@
+/**
+ * @description 우리가 왜 이것을 선택했는지
+ */
 export function CallToAction() {
     return (
         <section className="py-24 px-6 bg-sdg10 text-white text-center">

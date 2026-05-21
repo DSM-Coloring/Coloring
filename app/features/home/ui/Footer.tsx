@@ -1,3 +1,6 @@
+/**
+ * @description 푸터 컴포넌트
+ */
 export function Footer() {
     return (
         <footer className="bg-zinc-950 text-zinc-500 py-12 px-6 text-center">

@@ -1,3 +1,6 @@
+/**
+ * @description 설정된 색약 타입
+ */
 export type FilterType = "normal" | "protanopia" | "deuteranopia" | "tritanopia" | "achromatopsia" | "tritanomaly"
 
 export const FILTERS: FilterType[] = [

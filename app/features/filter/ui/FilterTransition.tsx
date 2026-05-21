@@ -3,6 +3,9 @@ interface FilterTransitionProps {
     children: React.ReactNode
 }
 
+/**
+ * @description 화면 전환용 애니메이션 (눈깜빡임)
+ */
 export function FilterTransition({ isTransitioning, children }: FilterTransitionProps) {
     const timing = "cubic-bezier(0.5, 1, 0.1, 1)"
 

@@ -27,6 +27,9 @@ const TARGETS = [
     },
 ]
 
+/**
+ * @description SDGs 10번 소개 페이지
+ */
 export function AboutSection() {
     return (
         <section id="about" className="py-24 px-6 bg-zinc-50 text-zinc-900">

@@ -1,5 +1,8 @@
 import { Eye } from "lucide-react"
 
+/**
+ * @description 히로 섹션 (첫부분)
+ */
 export function HeroSection() {
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center bg-zinc-900 text-white overflow-hidden py-20 px-6">

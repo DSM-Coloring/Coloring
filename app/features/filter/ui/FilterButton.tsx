@@ -8,6 +8,9 @@ interface FilterButtonProps {
     isActive: boolean
 }
 
+/**
+ * @description 필터 선택 버튼 컴포넌트
+ */
 export function FilterButton({ id, name, desc, color, isActive }: FilterButtonProps) {
     return (
         <button
