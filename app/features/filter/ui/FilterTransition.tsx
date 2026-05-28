@@ -10,20 +10,28 @@ export function FilterTransition({ isTransitioning, children }: FilterTransition
     const timing = "cubic-bezier(0.5, 1, 0.1, 1)"
 
     return (
-        <div className="relative overflow-hidden">
+        <div className="relative">
             <div
-                className={`fixed top-0 left-0 w-full h-1/2 bg-black z-9999 pointer-events-none transition-transform duration-500 ${
-                    isTransitioning ? "translate-y-0" : "-translate-y-full"
-                }`}
+                className={`
+                    fixed top-0 left-0 w-full h-1/2
+                    bg-black z-999 pointer-events-none
+                    transition-transform duration-500
+                    ${isTransitioning ? "translate-y-0" : "-translate-y-full"}
+                `}
                 style={{ transitionTimingFunction: timing }}
             />
+
             <div
-                className={`fixed bottom-0 left-0 w-full h-1/2 bg-black z-9999 pointer-events-none transition-transform duration-500 ${
-                    isTransitioning ? "translate-y-0" : "translate-y-full"
-                }`}
+                className={`
+                    fixed bottom-0 left-0 w-full h-1/2
+                    bg-black z-999 pointer-events-none
+                    transition-transform duration-500
+                    ${isTransitioning ? "translate-y-0" : "translate-y-full"}
+                `}
                 style={{ transitionTimingFunction: timing }}
             />
-            <div>{children}</div>
+
+            {children}
         </div>
     )
 }
