@@ -1,3 +1,5 @@
+"use client"
+
 import { InteractiveSection } from "@/app/features/filter/ui/InteractiveSection"
 import { AboutSection } from "@/app/features/home/ui/AboutSection"
 import { CallToAction } from "@/app/features/home/ui/CallToAction"
