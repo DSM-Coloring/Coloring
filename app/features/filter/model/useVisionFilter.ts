@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import { type FilterType, FILTERS } from "../../../shared/model/filter"
 
