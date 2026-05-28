@@ -6,14 +6,16 @@ interface FilterButtonProps {
     desc: string
     color: string
     isActive: boolean
+    onClick: (id: FilterType) => void
 }
 
 /**
  * @description 필터 선택 버튼 컴포넌트
  */
-export function FilterButton({ id, name, desc, color, isActive }: FilterButtonProps) {
+export function FilterButton({ id, name, desc, color, isActive, onClick }: FilterButtonProps) {
     return (
         <button
+            onClick={() => onClick(id)}
             className={`relative overflow-hidden group p-6 rounded-3xl text-left transition-all duration-300 border-2
         ${
             isActive
