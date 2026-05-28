@@ -1,6 +1,11 @@
 import { FilterButton } from "./FilterButton"
 import type { FilterType } from "../../../shared/model/filter"
 
+interface InteractiveSectionProps {
+    currentFilter: FilterType
+    setFilter: (filter: FilterType) => void
+}
+
 const FILTER_OPTIONS: {
     id: FilterType
     name: string
@@ -49,7 +54,7 @@ const FILTER_OPTIONS: {
 /**
  * @description 필터 선택 및 색약 설명 섹션
  */
-export function InteractiveSection() {
+export function InteractiveSection({ currentFilter, setFilter }: InteractiveSectionProps) {
     return (
         <section id="experience" className="py-24 px-6 bg-zinc-900 text-white">
             <div className="max-w-6xl mx-auto">
@@ -66,7 +71,12 @@ export function InteractiveSection() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {FILTER_OPTIONS.map((filter) => (
-                        <FilterButton key={filter.id} {...filter} isActive={filter.id === "normal"} />
+                        <FilterButton
+                            key={filter.id}
+                            {...filter}
+                            isActive={currentFilter === filter.id}
+                            onClick={setFilter}
+                        />
                     ))}
                 </div>
 
