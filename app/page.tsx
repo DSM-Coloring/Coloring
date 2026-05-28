@@ -1,22 +1,35 @@
-import { InteractiveSection } from "./features/filter/ui/InteractiveSection"
-import { AboutSection } from "./features/home/ui/AboutSection"
-import { CallToAction } from "./features/home/ui/CallToAction"
-import { ColorBlindnessSection } from "./features/home/ui/ColorBlindnessSection"
-import { Footer } from "./features/home/ui/Footer"
-import { HeroSection } from "./features/home/ui/HeroSection"
+"use client"
 
-/**
- * @description 홈 페이지
- */
-export default function Home() {
+import { useEffect, useState } from "react"
+
+import { useVisionFilter } from "./features/filter/model/useVisionFilter"
+import { FilterTransition } from "./features/filter/ui/FilterTransition"
+import { SvgFilters } from "./shared/ui/SvgFilters"
+import HomePage from "./pages/home/page"
+import { Filter } from "./features/filter/ui/Filter"
+
+export default function Page() {
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    const { currentFilter, isTransitioning, applyFilter } = useVisionFilter()
+
+    if (!mounted) return null
+
+    const filterStyle = currentFilter === "normal" ? "none" : `url(#${currentFilter})`
+
     return (
-        <main className="w-full min-h-screen bg-zinc-50">
-            <HeroSection />
-            <AboutSection />
-            <ColorBlindnessSection />
-            <InteractiveSection />
-            <CallToAction />
-            <Footer />
-        </main>
+        <>
+            <SvgFilters />
+
+            <FilterTransition isTransitioning={isTransitioning}>
+                <Filter filterStyle={filterStyle}>
+                    <HomePage currentFilter={currentFilter} setFilter={applyFilter} />
+                </Filter>
+            </FilterTransition>
+        </>
     )
 }
