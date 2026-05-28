@@ -8,6 +8,9 @@ import { SvgFilters } from "./shared/ui/SvgFilters"
 import HomePage from "./pages/home/page"
 import { Filter } from "./features/filter/ui/Filter"
 
+/**
+ * @description 메인페이지 & 시작 시 랜덤 필터
+ */
 export default function Page() {
     const [mounted, setMounted] = useState(false)
 
